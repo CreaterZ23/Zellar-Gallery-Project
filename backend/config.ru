@@ -13,6 +13,9 @@ use Rack::JSONBodyParser
 
 # Our application
 run ApplicationController
-#use PiecesController
+use PiecesController
+use ReviewsController
+use SellersController
+use BuyersController
 
 
