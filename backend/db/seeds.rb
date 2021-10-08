@@ -1,5 +1,6 @@
 puts "🌱 Seeding spices..."
 
+
 10.times do 
     Buyer.create(buyer_name: Faker::Name.name, password: Faker::FunnyName.name )
 end

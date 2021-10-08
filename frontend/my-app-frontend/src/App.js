@@ -81,11 +81,14 @@ function App() {
           <ArtSellers 
           sellers={sellers}
           handleOneSeller={handleOneSeller}
+          sellerPieces={sellerPieces}
           />
         </Route>
 
         <Route path="/art/details">
           <ArtDetails
+          update={update}
+          setUpdate={setUpdate}
             piece={piece}
             reviews={reviews}
           />
@@ -95,6 +98,7 @@ function App() {
           <ArtSeller
             sellerData={sellerData}
             sellerPieces={sellerPieces}
+            reviews={reviews}
           />
         </Route>
 
