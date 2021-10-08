@@ -34,12 +34,12 @@ function ArtSellers ({sellers, handleOneSeller}){
       }
       const eachSeller = sellers.map(seller=> (
       <div key={seller.id}>
-        <li >{seller.seller_name}</li>
+        <span >{seller.seller_name}</span>
         <Link to={`/art/seller`}><button className="primary" onClick={()=>handleOneSeller(seller.id)}>View Full Seller list</button></Link>
         </div>
       ))
     return(
-    <div>
+    <div className="sellerForm">
         <form onSubmit={handleSubmit}>
         <input 
           type="text" 
@@ -55,7 +55,7 @@ function ArtSellers ({sellers, handleOneSeller}){
           value={formData.password}
           onChange={handleChange}
         />
-        <button type="submit">New Seller</button>
+        <button type="submit">Add New Seller</button>
       </form>
       {eachSeller}
     </div>

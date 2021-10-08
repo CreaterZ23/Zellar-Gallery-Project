@@ -14,8 +14,8 @@ function ArtCard({artwork, handleDeletion, handleOnePiece}) {
   return (
     <div className="artCard">
       <img src={image} alt={"art name"} />
-      <h4>{title}</h4>
-      <p>Price: ${price}</p>
+      <h4 className="coloredText">{title}</h4>
+      <p className="coloredText">Price: ${price}</p>
       {inStock ? (
         <button className="primary" onClick={handleInStock}>Available</button>
       ) : (

@@ -49,7 +49,6 @@ function App() {
     fetch(`http://localhost:9292/sellers/${id}`)
     .then(resp => resp.json())
     .then(data=>{
-      console.log(data)
       setSellerData(data)
       setSellerPieces(data.pieces)
     })
@@ -58,14 +57,13 @@ function App() {
 
 
   
-  useEffect(()=>{
+ 
     fetch(`http://localhost:9292/sellers`)
       .then(resp=> resp.json())
       .then(data=>{
-        console.log(data)
         setSellers(data)
       })
-  },[update])
+  
 
   return (
     <div className="app">
@@ -87,8 +85,7 @@ function App() {
 
         <Route path="/art/details">
           <ArtDetails
-          update={update}
-          setUpdate={setUpdate}
+         
             piece={piece}
             reviews={reviews}
           />

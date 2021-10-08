@@ -1,7 +1,7 @@
 import React,{useState} from "react"
 import PieceReviewCard from "./PieceReviewCard"
 
-function ArtDetails({piece, reviews, update, setUpdate}){
+function ArtDetails({piece, reviews}){
     const{title, image, date, artist, medium, dimensions, city, price, in_stock}=piece
     const[displayForm, setDisplayForm]=useState(false)
         
@@ -39,7 +39,7 @@ function ArtDetails({piece, reviews, update, setUpdate}){
         }).then(resp=>resp.json())
         .then(newData=>{
             
-            setUpdate(!update)
+         
             console.log(newData)
         })
         }

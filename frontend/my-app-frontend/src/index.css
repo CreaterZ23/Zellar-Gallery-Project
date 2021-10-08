@@ -16,7 +16,7 @@ header {
   background-color: rgba(20, 114, 158, 0.657);
   height: 180px;
   padding: 20px, 20px, 20px, 20px;
-  font-family: American Typewriter, serif;
+  font-family: Didot, serif;
   font-size: 34px;
  
 }
@@ -36,11 +36,13 @@ img {
  
 body {
   text-align: center;
-  font-family: Tahoma, sans-serif;
+  font-family: Didot, serif;
   margin: 0px;
   padding: 0px;
   background-image: url("https://cdn.pixabay.com/photo/2018/02/17/14/15/pattern-3160023_1280.jpg");
+  color: black;
 }
+
  
 button {
   background-color: black;
@@ -67,16 +69,25 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  justify-content: center;
+  justify-content: space-evenly;
   padding: 10px 10px 10px 10px;
+  
 }
  
 .artCard{
+  color:black;
   background-image: url("https://cdn.pixabay.com/photo/2018/08/19/07/05/background-3616101_1280.jpg");
   width:400px;
   padding: 10px 10px 10px 10px;
   margin: auto;
   font-size: 20px;
+  font-family: Didot, serif;
+  
  
 }
+
+.details{
+  font-family: Snell Roundhand, cursive;
+}
+
 
