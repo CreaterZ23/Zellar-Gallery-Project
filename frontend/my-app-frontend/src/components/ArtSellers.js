@@ -2,14 +2,9 @@ import React, {useState} from "react"
 import {Link} from "react-router-dom"
 import ArtSeller from "../ArtSeller"
 
-function ArtSellers ({sellers, handleOneSeller, sellerPieces}){
-  sellerPieces.map(sellerPiece =>(
-    <ArtSeller
-    key={sellerPiece.id}
-    sellerPiece={sellerPiece}
-    ></ArtSeller>
-  ))
+function ArtSellers ({sellers, handleOneSeller}){
   
+
     const[formData, setFormData]=useState({
         seller_name:"",
         password:""
