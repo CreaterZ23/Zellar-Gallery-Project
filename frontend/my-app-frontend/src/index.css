@@ -21,9 +21,20 @@ header {
  
 }
 header>h1{
+  position: relative;
   margin-top: 0px;
   padding-top: 5px;
   margin-bottom: 15px;
+  top: 18px;
+  left: 10px;
+}
+
+.header>img {
+  position: relative;
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
 }
 .App{
   font-family: American Typewriter, serif;
@@ -89,5 +100,4 @@ button:hover {
 .details{
   font-family: Snell Roundhand, cursive;
 }
-
 
