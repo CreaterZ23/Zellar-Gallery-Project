@@ -12,7 +12,7 @@ function ArtCard({artwork, handleDeletion, handleOnePiece}) {
   
 
   return (
-    <li className="card">
+    <div className="artCard">
       <img src={image} alt={"art name"} />
       <h4>{title}</h4>
       <p>Price: ${price}</p>
@@ -23,7 +23,7 @@ function ArtCard({artwork, handleDeletion, handleOnePiece}) {
       )}
       <button className="primary" onClick={()=>handleDeletion(artwork.id)}>Delete</button>
       <Link to={`/art/details`}><button className="primary" onClick={()=>handleOnePiece(artwork.id)}>View Full Details</button></Link>
-    </li>
+    </div>
   );
 }
 

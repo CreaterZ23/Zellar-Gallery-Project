@@ -11,9 +11,9 @@ function ArtGallery({artworks, handleDeletion, handleOnePiece}) {
       />
     )})
   return (
-    <ul className="cards-flex-box">
+    <div className="galleryDiv">
         {artWorkCard}
-    </ul>
+    </div>
   );
 }
 
