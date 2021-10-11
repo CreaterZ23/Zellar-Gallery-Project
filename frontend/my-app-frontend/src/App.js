@@ -17,6 +17,7 @@ function App() {
   const[sellers, setSellers] = useState([])
   const[sellerData, setSellerData]= useState([])
   const[sellerPieces, setSellerPieces]=useState([])
+  const[buyerData, setBuyerData]=useState([])
   function getPieces(){
     fetch(`http://localhost:9292/pieces`)
     .then(resp => resp.json())
@@ -53,15 +54,17 @@ function App() {
       setSellerPieces(data.pieces)
     })
   }
-
-
-
-  
  
     fetch(`http://localhost:9292/sellers`)
       .then(resp=> resp.json())
       .then(data=>{
         setSellers(data)
+      })
+
+    fetch(`http://localhost:9292/buyers`)
+      .then(resp=> resp.json())
+      .then(data=>{
+        setBuyerData(data)
       })
   
 
@@ -96,6 +99,12 @@ function App() {
             sellerData={sellerData}
             sellerPieces={sellerPieces}
             reviews={reviews}
+          />
+        </Route>
+
+        <Route path="/art/buyers">
+          <ArtBuyer
+            buyerData={buyerData}
           />
         </Route>
 

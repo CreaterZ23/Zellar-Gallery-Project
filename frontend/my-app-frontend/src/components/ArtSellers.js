@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import {Link} from "react-router-dom"
-import ArtSeller from "../ArtSeller"
+
 
 function ArtSellers ({sellers, handleOneSeller}){
   
@@ -32,10 +32,21 @@ function ArtSellers ({sellers, handleOneSeller}){
         }).then(resp=>resp.json())
         .then(newData=> console.log(newData))
       }
+
+      function handleSellerDeletion(id){
+          fetch(`http://localhost:9292/sellers/${id}`,{
+            method: 'Delete'
+          })
+          // .then(setUpdate(!update))
+      }
+
+
+
       const eachSeller = sellers.map(seller=> (
       <div key={seller.id}>
         <span >{seller.seller_name}</span>
         <Link to={`/art/seller`}><button className="primary" onClick={()=>handleOneSeller(seller.id)}>View Full Seller list</button></Link>
+        <button onClick={()=>handleSellerDeletion(seller.id)} >Delete Seller</button>
         </div>
       ))
     return(

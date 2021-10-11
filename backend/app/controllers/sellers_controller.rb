@@ -12,5 +12,10 @@ class SellersController < ApplicationController
         newSeller = Seller.create(seller_name:params[:seller_name], password:params[:password])
         newSeller.to_json
     end
+
+    delete '/sellers/:id' do
+        seller = Seller.find(params[:id])
+        seller.destroy
+    end
     
 end
