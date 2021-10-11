@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 
 function PieceReviewCard({comment, rating}) {
@@ -7,10 +7,10 @@ function PieceReviewCard({comment, rating}) {
     
 
   return (
-    <li className="review-card">
+    <div className="review-card">
       <h4>Rating: {newRating}</h4>
       <p>{comment}</p>
-    </li>
+    </div>
   );
 }
 

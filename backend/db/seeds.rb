@@ -1,16 +1,16 @@
 puts "🌱 Seeding spices..."
 
 
-10.times do 
+20.times do 
     Buyer.create(buyer_name: Faker::Name.name, password: Faker::FunnyName.name )
 end
 puts "🌱 Seeding pumpkins..."
-10.times do 
+20.times do 
     Seller.create(seller_name: Faker::Name.name, password: Faker::FunnyName.name)
 end
 
 puts "🌱 Seeding bananas..."
-object_ids = [5, 1619, 702, 1767, 2760, 2543, 1691, 3407, 4656, 6992, 437133]
+object_ids = [471581, 254312, 340723, 199267, 70345, 10000, 10001]
 
 object_ids.each do |object_id| 
     response = RestClient.get "https://collectionapi.metmuseum.org/public/collection/v1/objects/#{object_id}"
@@ -32,7 +32,7 @@ object_ids.each do |object_id|
 end
 
 puts "🌱 Seeding apples..."
-10.times do 
+50.times do 
     Review.create(rating:rand(1..10), comment: Faker::Quote.yoda, piece_id: Piece.all.sample.id)
 end
 

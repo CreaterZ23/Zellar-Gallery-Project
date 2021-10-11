@@ -30,11 +30,9 @@ header>h1{
 }
 
 .header>img {
-  position: relative;
-  float: left;
-  width: 100px;
-  height: 100px;
-  background: #555;
+  text-align: right;
+  float:right;
+  margin-left:20px
 }
 .App{
   font-family: American Typewriter, serif;
@@ -52,6 +50,7 @@ body {
   padding: 0px;
   background-image: url("https://cdn.pixabay.com/photo/2018/02/17/14/15/pattern-3160023_1280.jpg");
   color: black;
+  
 }
 
  
@@ -99,5 +98,27 @@ button:hover {
 
 .details{
   font-family: Snell Roundhand, cursive;
+  text-align: left;
 }
+
+.details{
+  margin: 15px;
+}
+.basicDetails{
+  display: flex;
+  align-items: center;
+  
+}
+
+.basicDetails>img{
+  height: 600px;
+  width: auto;
+  margin: 10px;
+}
+
+.basicDetails>span{
+  width: 500px;
+  height: auto;
+}
+
 

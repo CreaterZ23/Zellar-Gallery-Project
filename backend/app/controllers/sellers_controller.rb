@@ -13,4 +13,9 @@ class SellersController < ApplicationController
         newSeller.to_json
     end
     
+    delete '/sellers/:id' do
+        seller = Seller.find(params[:id])
+        seller.destroy
+    end
+    
 end

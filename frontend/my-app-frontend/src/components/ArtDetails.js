@@ -2,7 +2,7 @@ import React,{useState} from "react"
 import PieceReviewCard from "./PieceReviewCard"
 
 function ArtDetails({piece, reviews}){
-    const{title, image, date, artist, medium, dimensions, city, price, in_stock}=piece
+    const{title, image, date, artist, medium, dimensions, city, price}=piece
     const[displayForm, setDisplayForm]=useState(false)
         
     const[formData, setFormData] =useState({
@@ -10,6 +10,7 @@ function ArtDetails({piece, reviews}){
           comment: "",
           piece_id: piece.id
         })
+        
     let eachReview = reviews.map((review)=>{
         return(
             <PieceReviewCard
@@ -18,7 +19,6 @@ function ArtDetails({piece, reviews}){
                 rating={review.rating}
             />
         )})
-        console.log(piece.id)
     
         function displayReviewForm(){
           setDisplayForm(!displayForm)
@@ -38,8 +38,6 @@ function ArtDetails({piece, reviews}){
             body: JSON.stringify(formData)
         }).then(resp=>resp.json())
         .then(newData=>{
-            
-         
             console.log(newData)
         })
         }
@@ -71,26 +69,28 @@ function ArtDetails({piece, reviews}){
         </div>
 
 
-
-
-
-
-
-
     return (
         <div className="details">
-            <img src={image} alt={"art name"} />
-            <h4>{title}</h4>
-            <p>Price: ${price}</p>
-            <p>Date Item Listed: {date}</p>
-            <p>This work originates from {city?city:"unknown"} and was created by {artist}. The medium used was {medium} and the dimensions are {dimensions}.</p>
-            <ul>
+            <div className="basicDetails">
+              
+              <img src={image} alt={"art name"} />
+              <span>
+                <h2>{title}</h2>
+                <p>Price: ${price}</p>
+                <p>Date Item Listed: {date}</p>
+                <p>This work originates from {city?city:"unknown"} and was created by {artist}. The medium used was {medium} and the dimensions are {dimensions}.</p>
+              </span>
+            </div>
+
+            <div>
+              <h2>Reviews</h2>
                 {eachReview}
-            </ul>
+            </div>
+
             <button onClick={displayReviewForm}>Add a review</button>
-      {displayForm ? reviewForm: null}
+              {displayForm ? reviewForm: null}
       
-        </div>
+      </div>
     )
 
 }

@@ -1,4 +1,3 @@
-import SellerPieceCard from "./SellerPieceCard";
 
 function ArtSeller({sellerData, sellerPieces,}){
     const{seller_name} = sellerData
@@ -7,7 +6,7 @@ function ArtSeller({sellerData, sellerPieces,}){
         <div key={sellerPiece.id}>
             <h2>{sellerPiece.artist}</h2>
             <p>{sellerPiece.title}</p>
-            <img src={sellerPiece.image}></img>
+            <img src={sellerPiece.image} alt=""></img>
             <p>${sellerPiece.price}</p>
         </div>
     ))

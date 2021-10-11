@@ -52,17 +52,20 @@ function App() {
       setSellerData(data)
       setSellerPieces(data.pieces)
     })
-  }
-
-
-
-  
+  }  
  
     fetch(`http://localhost:9292/sellers`)
       .then(resp=> resp.json())
       .then(data=>{
         setSellers(data)
       })
+
+      function handleSellerDeletion(id){
+        fetch(`http://localhost:9292/sellers/${id}`,{
+          method: 'Delete'
+        })
+        .then(setUpdate(!update))
+    }
   
 
   return (
@@ -80,12 +83,12 @@ function App() {
           sellers={sellers}
           handleOneSeller={handleOneSeller}
           sellerPieces={sellerPieces}
+          handleSellerDeletion={handleSellerDeletion}
           />
         </Route>
 
         <Route path="/art/details">
           <ArtDetails
-         
             piece={piece}
             reviews={reviews}
           />
