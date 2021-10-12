@@ -10,7 +10,7 @@ puts "🌱 Seeding pumpkins..."
 end
 
 puts "🌱 Seeding bananas..."
-object_ids = [471581, 254312, 340723, 199267, 70345, 10000, 10001]
+object_ids = [471581, 254312, 340723, 199267, 70345, 10000, 10001, 20000, 20001, 200010, 250010, 253010, 12000, 42000]
 
 object_ids.each do |object_id| 
     response = RestClient.get "https://collectionapi.metmuseum.org/public/collection/v1/objects/#{object_id}"
